@@ -5,15 +5,13 @@ const _userData = useUserData();
 </script>
 
 <template>
-  <div class="content-wrapper">
-    <div class="container">
-      <UiCard>
-        <UiCardHeader>
-          <UiCardTitle>Welcome, {{ _userData.user?.name }}</UiCardTitle>
-        </UiCardHeader>
+  <div class="container">
+    <UiCard>
+      <UiCardHeader>
+        <UiCardTitle>Welcome, {{ _userData.user?.name }}</UiCardTitle>
+      </UiCardHeader>
 
-        <UiCardContent></UiCardContent>
-      </UiCard>
-    </div>
+      <UiCardContent></UiCardContent>
+    </UiCard>
   </div>
 </template>

@@ -5,6 +5,7 @@ import type { SidebarItem } from "~/config/sidebar";
 
 const props = defineProps<{
   item: SidebarItem;
+  isCollapsed?: boolean;
 }>();
 
 const route = useRoute();
@@ -43,45 +44,66 @@ function toggle() {
       v-if="item.to"
       :to="item.to"
       class="sidebar-item"
-      :class="{ 'bg-slate-800': isActive }"
+      :class="{
+        'dark:bg-slate-800 bg-blue-50': isActive,
+        'justify-center': props.isCollapsed,
+        'justify-between': !props.isCollapsed,
+      }"
     >
       <div class="navigator">
         <UiIcon
           v-if="item.icon"
           :name="item.icon"
-          class="icon"
           :class="{ 'text-brand-secondary': isActive }"
+          :size="20"
         />
-        <span class="truncate" :class="{ 'text-soft-white': isActive }">{{
-          item.label
-        }}</span>
+        <span
+          v-if="!props.isCollapsed"
+          class="truncate"
+          :class="{ 'font-bold': isActive }"
+          >{{ item.label }}</span
+        >
       </div>
     </NuxtLink>
 
-    <div v-else class="sidebar-item" tabindex="0" @click="toggle()">
+    <div
+      v-else
+      class="sidebar-item"
+      :class="props.isCollapsed ? 'justify-center' : 'justify-between'"
+      tabindex="0"
+      @click="toggle()"
+    >
       <div class="navigator">
         <UiIcon
           v-if="item.icon"
           :name="item.icon"
-          class="icon"
           :class="{ 'text-brand-secondary': isActive }"
+          :size="20"
         />
-        <span class="truncate" :class="{ 'text-soft-white': isActive }">{{
-          item.label
-        }}</span>
+        <span
+          v-if="!props.isCollapsed"
+          class="truncate"
+          :class="{ 'text-soft-white': isActive }"
+          >{{ item.label }}</span
+        >
       </div>
 
       <UiIcon
-        v-if="hasChildren"
+        v-if="hasChildren && !props.isCollapsed"
         :name="isOpen ? 'ic:round-keyboard-arrow-down' : 'ic:round-keyboard-arrow-right'"
-        class="arrow-icon"
+        :size="20"
       />
     </div>
 
     <!-- children -->
     <Transition name="dropdown">
       <ul v-if="hasChildren && isOpen" class="sidebar-child">
-        <SidebarItem v-for="child in item.children" :key="child.label" :item="child" />
+        <SidebarItem
+          v-for="child in item.children"
+          :key="child.label"
+          :item="child"
+          :is-collapsed="props.isCollapsed"
+        />
       </ul>
     </Transition>
   </li>

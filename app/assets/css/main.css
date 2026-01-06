@@ -234,18 +234,6 @@
   padding-inline: 1.25rem;
 }
 
-#dashboard-page {
-  @apply flex h-screen overflow-hidden;
-}
-
-main.main-content {
-  @apply relative flex-1 overflow-y-auto;
-}
-
-main.main-content .content-wrapper {
-  @apply mt-16 py-3 md:py-6;
-}
-
 /* dialog */
 .dialog-content-icon-wrapper {
   @apply flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4;
@@ -268,114 +256,41 @@ main.main-content .content-wrapper {
   @apply flex flex-col items-center justify-center gap-3;
 }
 
+/* header */
+.header-bar {
+  @apply rounded-none border-x-0 border-t-0;
+}
+
+.header-bar .header-content {
+  @apply flex flex-row items-center justify-between px-6;
+}
+
 /* sidebar */
-aside {
-  @apply border-accent hidden min-h-screen w-56 flex-col overflow-y-auto border-r bg-slate-900 xl:flex 2xl:w-1/7;
+.sidebar {
+  @apply flex h-screen flex-col rounded-none border-t-0 transition-all duration-300;
 }
 
-aside nav {
-  @apply mt-18 flex flex-1 flex-col overflow-y-auto text-sm;
+.sidebar .sidebar-head {
+  @apply flex items-center justify-between border-b px-4 pb-5 lg:pb-6;
 }
-
 .sidebar-item {
-  @apply flex cursor-pointer items-center justify-between px-4 py-3 font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white;
+  @apply text-foreground flex cursor-pointer items-center px-4 py-3 font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800;
 }
 
 .sidebar-item .navigator {
   @apply flex items-center gap-3 overflow-hidden;
 }
 
-.sidebar-item .navigator .icon {
-  @apply shrink-0 text-lg;
-}
-
 .sidebar-item .navigator span {
   @apply text-xs 2xl:text-sm;
 }
 
-.sidebar-item .arrow-icon {
-  @apply shrink-0 text-xl;
-}
-
 .sidebar-child {
-  @apply border-background/10 dark:border-accent ml-4 border-l;
+  @apply border-foreground/20 dark:border-accent ml-4 border-l;
 }
 
 .version-info {
   @apply text-background/70 dark:text-foreground mt-auto w-full border-t border-white/10 px-4 py-3 text-center text-xs;
-}
-
-/* header */
-header {
-  @apply border-accent fixed top-0 right-0 left-0 z-10 border-b bg-white shadow dark:bg-[#1D1D1D];
-}
-
-header .logo-holder {
-  @apply border-light-gray dark:border-accent hidden border-r bg-white px-3 py-3 md:block md:px-6 lg:w-56 2xl:w-1/7 dark:bg-[#1D1D1D];
-}
-
-header .logo-holder img {
-  @apply w-37;
-}
-
-header .page-heading {
-  @apply container flex w-full items-center justify-between max-md:py-3 lg:w-5/6;
-}
-
-header h1 {
-  @apply text-foreground text-base font-semibold capitalize 2xl:text-lg;
-}
-
-.darkmode-switch {
-  @apply mx-auto inline-flex w-fit items-center justify-center gap-2;
-}
-
-.darkmode-switch .icon {
-  @apply flex-1 cursor-pointer text-left text-sm font-medium;
-}
-
-.header-userdata {
-  @apply dark:hover:bg-accent relative flex cursor-pointer items-center gap-2 rounded-xl py-1 duration-200 hover:bg-gray-100 2xl:gap-3;
-}
-
-.header-userdata .icon-outer {
-  @apply from-brand-secondary to-brand flex size-7 items-center justify-center rounded-full bg-linear-to-br 2xl:size-8;
-}
-
-.header-userdata .icon-outer .icon {
-  @apply text-soft-white 2xl:text-xl;
-}
-
-.header-userdata .username {
-  @apply dark:text-foreground text-xs text-gray-700 2xl:text-sm;
-}
-
-.header-userdata em.role {
-  @apply text-xs text-gray-500 dark:text-gray-300;
-}
-
-.user-config-dropdown button {
-  @apply dark:hover:bg-accent w-full cursor-pointer p-2 duration-200 hover:bg-gray-100;
-}
-
-.user-config-dropdown button .icon {
-  @apply dark:text-foreground text-lg text-gray-700;
-}
-
-.user-config-dropdown button p {
-  @apply dark:text-foreground text-xs text-gray-700 2xl:text-sm;
-}
-
-.user-config-dropdown button.logout {
-  @apply dark:hover:bg-destructive/10 hover:bg-red-50;
-}
-
-.user-config-dropdown button.logout .icon {
-  @apply dark:text-destructive text-lg text-red-700;
-}
-
-.user-config-dropdown button.logout p {
-  @apply dark:text-destructive text-xs text-red-700 2xl:text-sm;
 }
 
 /* login page */
@@ -401,4 +316,12 @@ main#login-page .section-form-wrapper h2 {
 
 main#login-page .section-welcome-wrapper h3 {
   @apply text-soft-white mb-2 text-4xl font-bold dark:text-gray-300;
+}
+
+.darkmode-switch {
+  @apply mx-auto inline-flex w-fit items-center justify-center gap-2;
+}
+
+.darkmode-switch .icon {
+  @apply flex-1 cursor-pointer text-left text-sm font-medium;
 }

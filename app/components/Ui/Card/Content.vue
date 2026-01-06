@@ -12,22 +12,22 @@
 </template>
 
 <script lang="ts" setup>
-  import { Primitive } from "reka-ui";
-  import type { PrimitiveProps } from "reka-ui";
-  import type { HTMLAttributes } from "vue";
+import { Primitive } from "reka-ui";
+import type { PrimitiveProps } from "reka-ui";
+import type { HTMLAttributes } from "vue";
 
-  const props = withDefaults(
-    defineProps<
-      PrimitiveProps & {
-        /** Content to display in the card */
-        content?: string;
-        /** Custom class(es) to add to the element */
-        class?: HTMLAttributes["class"];
-      }
-    >(),
-    { as: "div" }
-  );
-  const styles = tv({
-    base: "px-6",
-  });
+const props = withDefaults(
+  defineProps<
+    PrimitiveProps & {
+      /** Content to display in the card */
+      content?: string;
+      /** Custom class(es) to add to the element */
+      class?: HTMLAttributes["class"];
+    }
+  >(),
+  { as: "div" }
+);
+const styles = tv({
+  base: "px-5 lg:px-6",
+});
 </script>

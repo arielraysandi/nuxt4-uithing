@@ -52,6 +52,6 @@ const props = withDefaults(
 
 const styles = tv({
   base:
-    "flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm",
+    "flex flex-col gap-6 rounded-xl border bg-card py-5 lg:py-6 text-card-foreground shadow-sm",
 });
 </script>
