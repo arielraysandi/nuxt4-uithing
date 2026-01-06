@@ -1,0 +1,22 @@
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  overflow: hidden;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.dropdown-enter-to,
+.dropdown-leave-from {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}

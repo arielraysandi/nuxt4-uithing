@@ -34,6 +34,14 @@ const helper = {
       || input === undefined;
   },
 
+  isEmailValid(email: string): boolean {
+    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
   hasPermission(menu: string, action?: string): boolean {
     let permissions: string[] = [];
     try {

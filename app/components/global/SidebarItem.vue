@@ -79,8 +79,10 @@ function toggle() {
     </div>
 
     <!-- children -->
-    <ul v-if="hasChildren && isOpen" class="sidebar-child">
-      <SidebarItem v-for="child in item.children" :key="child.label" :item="child" />
-    </ul>
+    <Transition name="dropdown">
+      <ul v-if="hasChildren && isOpen" class="sidebar-child">
+        <SidebarItem v-for="child in item.children" :key="child.label" :item="child" />
+      </ul>
+    </Transition>
   </li>
 </template>

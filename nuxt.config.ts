@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
+        { "http-equiv": "X-UA-Compatible", content: "IE=edge"},
         {
           name: "viewport",
           content: "width=device-width, initial-scale=1, shrink-to-fit=no",
@@ -50,7 +51,7 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.css", "~/assets/css/animation.css"],
 
   imports: {
     imports: [{
