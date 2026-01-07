@@ -234,6 +234,10 @@
   padding-inline: 1.25rem;
 }
 
+main#main-content {
+  @apply mt-6 flex-1 overflow-y-auto pb-6;
+}
+
 /* dialog */
 .dialog-content-icon-wrapper {
   @apply flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4;
@@ -262,12 +266,20 @@
 }
 
 .header-bar .header-content {
-  @apply flex flex-row items-center justify-between px-6;
+  @apply flex flex-row items-center justify-between;
 }
 
 /* sidebar */
 .sidebar {
   @apply flex h-screen flex-col rounded-none border-t-0 transition-all duration-300;
+}
+
+.sidebar.collapsed {
+  @apply w-0 lg:w-16;
+}
+
+.sidebar.expanded {
+  @apply w-0 lg:w-56 2xl:w-64;
 }
 
 .sidebar .sidebar-head {
@@ -293,6 +305,30 @@
   @apply text-background/70 dark:text-foreground mt-auto w-full border-t border-white/10 px-4 py-3 text-center text-xs;
 }
 
+/* table */
+.table-data-filter {
+  @apply mb-4;
+}
+.table-outer {
+  @apply border-border bg-background/90 overflow-hidden rounded-lg border;
+}
+
+.table-header {
+  @apply bg-brand sticky top-0 border backdrop-blur-sm dark:bg-slate-800;
+}
+
+.table-header .table-head-row {
+  @apply text-soft-white font-semibold backdrop-blur;
+}
+
+.table-body {
+  @apply odd:bg-muted/50 odd:hover:bg-muted/50 hover:bg-transparent [&>:not(:last-child)]:border-r;
+}
+
+.table-action-button-group {
+  @apply flex flex-wrap items-center justify-end gap-2;
+}
+
 /* login page */
 main#login-page {
   @apply grid min-h-screen grid-cols-1 lg:grid-cols-2;
@@ -307,7 +343,7 @@ main#login-page .section-welcome-wrapper {
 }
 
 main#login-page .section-form-wrapper h1 {
-  @apply text-foreground mb-1 text-2xl font-bold;
+  @apply text-foreground mb-1 text-lg font-bold lg:text-2xl;
 }
 
 main#login-page .section-form-wrapper h2 {

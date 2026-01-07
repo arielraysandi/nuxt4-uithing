@@ -6,7 +6,7 @@ export default defineNuxtRouteMiddleware((to) => {
   const token = _userData.value.token;
   const isLogin = to.path.startsWith("/auth/login");
 
-  // if (!token && !isLogin) {
-  //   return navigateTo("/auth/login");
-  // }
+  if (!token && !isLogin) {
+    return navigateTo("/auth/login");
+  }
 });

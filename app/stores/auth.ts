@@ -19,12 +19,6 @@ export const useAuthStore = defineStore("auth", {
       username: <string>"",
       password: <string>"",
     },
-    registerForm: {
-      email: <string>"",
-      name: <string>"",
-      password: <string>"",
-      confirmPassword: <string>"",
-    },
     isLoading: <boolean>false
   }),
   

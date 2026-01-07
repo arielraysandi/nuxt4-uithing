@@ -36,7 +36,7 @@ const isDarkMode = computed({
             />
 
             <div class="mt-10 text-center">
-              <h1>Login</h1>
+              <h1>Audit Management System</h1>
               <h2>Masuk ke dashboard Anda</h2>
             </div>
           </UiCardHeader>

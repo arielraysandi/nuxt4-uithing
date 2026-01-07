@@ -11,11 +11,9 @@ export type UserData = {
 
 export type User = {
   id: string;
-  sso_id: number;
+  sso_user_id: number;
   name: string;
   nik: string;
-  email: string;
-  phone: string;
   active: boolean;
 }
 

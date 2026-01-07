@@ -7,6 +7,8 @@ useHead({
 </script>
 
 <template>
+  <NuxtLoadingIndicator />
+
   <UiSonner />
   <Dialog />
   <Loading />

@@ -13,13 +13,13 @@ const routeName = computed(() => {
 </script>
 
 <template>
-  <div class="flex min-h-screen">
+  <div class="flex h-screen overflow-hidden">
     <Sidebar />
 
-    <div class="flex flex-1 flex-col">
+    <div class="flex flex-1 flex-col overflow-hidden">
       <Header :page-title="routeName" />
 
-      <main class="p-6">
+      <main id="main-content">
         <slot />
       </main>
     </div>
